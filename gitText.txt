@@ -1,0 +1,27 @@
+
+
+
+1. Git is a revision control system, a tool to manage your source code history. GitHub is a hosting service for Git repositories. So they are not the same thing: Git is the tool, GitHub is the service for projects that use Git
+
+
+
+
+Git Flow
+
+Git flow works with different branches to manage easily each phase of the software development, it’s suggested to be used when your software has the concept of “release” because, as you can see in the scheme above, it’s not the best decision when you work in Continuous Delivery or Continuos Deployment environment where this concept is missing.
+Another good point of this flow is that fits perfectly when you work in team and one or more developers have to collaborate to the same feature
+
+The main branches in this flow are:
+
+    master
+    develop
+    features
+    hotfix
+    release
+
+When you clone a GIT repository in your local folder you have immediately to create a branch from the master called develop, this branch will be the main branch for the development and where all the developers in a team will work to implement new features or bug fixing before the release.
+Every time a developer needs to add a new feature he will create a new branch from develop that allow him to work properly in that feature without compromise the code for the other people in the team in the develop branch.
+When the feature will be ready and tested it could be rebased inside the develop branch, our goal is to have always a stable version of develop branch because we merge the code only when the new feature is completed and it’s working.
+When all the features related to a new release are implemented in the develop branch it’s time to branch the code to the release branch where there you’ll start to test properly before the final deployment.
+When you branch your code from develop to release you should avoid to add new features but you should only fix bugs inside the release branch code until to you create a stable release branch.
+At the end, when you are ready to push live deploy live your project, you will tag the version inside the master branch so there you can have all the different versions that you release week by week
